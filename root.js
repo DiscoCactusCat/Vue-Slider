@@ -38,9 +38,7 @@ const RootComponent = {
         
     
     },
-    created(){
-        console.log(this.congif1);
-    }
+  
   
 };
 const app = Vue.createApp(RootComponent);

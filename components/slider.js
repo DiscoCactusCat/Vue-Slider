@@ -1,8 +1,5 @@
 app.component("slider", {
     props: {
-    //    images:{
-    //        type: Array,
-    //    },
        config:{
            type: Object,
        }
