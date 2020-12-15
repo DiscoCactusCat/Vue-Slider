@@ -4,10 +4,12 @@ app.component("slider", {
            type: Object,
        }
     },
+    // TODO : Transition à débug sur le changement d'image
     template:`
     <div class="slider">
         
           <div class="img-container" >
+          
             <transition name="fade">
                 <img :src="currentImg" :key="currentImg"/>
                

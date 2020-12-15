@@ -33,12 +33,14 @@ h1{
 
 .fade-enter-active{
     animation:fade-slides 1s ease-in-out 1s;
-    
+   
 }
 
 .fade-leave-active{
     animation: fade-slides 1s ease-in-out reverse;
 }
+
+
 
 
 
@@ -56,6 +58,7 @@ h1{
         width: 100%;
         height: 50vh;
         cursor: pointer;
+        background: #fff;
 
         // &::after{
         //     width: 100%;
@@ -69,9 +72,10 @@ h1{
 
         // }
         &:hover{
-            img{
+            img:not(.fade-enter-active){
                 scale: 1.5;
             }
+
 
             .image-overlay{
                 opacity: .5;
