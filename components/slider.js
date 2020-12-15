@@ -6,11 +6,20 @@ app.component("slider", {
     },
     template:`
     <div class="slider">
-        <transition name="fade">
-          <div v-show="isChanged" class="img-container">
-              <img :src="currentImg" />
+        
+          <div class="img-container" >
+            <transition name="fade">
+                <img :src="currentImg" :key="currentImg"/>
+               
+            </transition>
+            <div class="image-overlay">
+             
+            </div>
+            <div class="image-overlay-2">
+              <p>{{this.config.hoverText}}</p>
+            </div>
           </div>
-        </transition>
+       
         <a class="prev" @click="prev" href="#">&#10094;</a>
         <a class="next" @click="next" href="#">&#10095; </a>
     </div>
@@ -20,7 +29,7 @@ app.component("slider", {
         return {
           timer: null,
           currentIndex: 0,
-          isChanged: true,
+          
         };
       },
     methods: {
@@ -40,15 +49,13 @@ app.component("slider", {
     },
     computed: {
         currentImg: function() {
+            this.isChanged = !this.isChanged;            
             return this.config.images[Math.abs(this.currentIndex) % this.config.images.length];
           }
     },
     mounted: function() {
         this.startSlide();
       },
-    updated: function(){
-        this.isChanged = !this.isChanged;
-        console.log(this.isChanged);
-    }
+    
    
 })
