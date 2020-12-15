@@ -22,16 +22,18 @@ h1 {
 .slider {
   background: #111;
   width: 100%;
-  height: 80%;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
 .slider .img-container {
   width: 100%;
-  height: 100%;
+  height: 50vh;
 }
 .slider .img-container img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .slider .prev, .slider .next {
   position: absolute;

@@ -7,9 +7,9 @@ app.component("slider", {
     template:`
     <div class="slider">
         <transition name="fade">
-        <div class="img-container" v-for="i in [currentIndex]" :key="i">
-            <img :src="currentImg" />
-        </div>
+          <div v-show="isChanged" class="img-container">
+              <img :src="currentImg" />
+          </div>
         </transition>
         <a class="prev" @click="prev" href="#">&#10094;</a>
         <a class="next" @click="next" href="#">&#10095; </a>
@@ -20,6 +20,7 @@ app.component("slider", {
         return {
           timer: null,
           currentIndex: 0,
+          isChanged: true,
         };
       },
     methods: {
@@ -45,5 +46,9 @@ app.component("slider", {
     mounted: function() {
         this.startSlide();
       },
+    updated: function(){
+        this.isChanged = !this.isChanged;
+        console.log(this.isChanged);
+    }
    
 })
