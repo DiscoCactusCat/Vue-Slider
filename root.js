@@ -21,7 +21,7 @@ const RootComponent = {
            
 
             config2:{
-                interval: 5000000,
+                interval: 5000,
                 images: [
                     "./assets/images/img10.jpg",
                     "./assets/images/img11.jpg",
